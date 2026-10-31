@@ -1,0 +1,10 @@
+Actual Class,Predicted Class,Sample Count,Error Percentage,Physical Reason
+Ball_021_1,IR_021_1,3,6.52,"Severe rolling element (0.021"") shock pulses propagate across inner raceway and outer housing, matching the spectral and energy signatures of raceway flaws."
+Ball_021_1,OR_014_6_1,4,8.7,"Severe rolling element (0.021"") shock pulses propagate across inner raceway and outer housing, matching the spectral and energy signatures of raceway flaws."
+Ball_021_1,OR_021_6_1,1,2.17,"Severe rolling element (0.021"") shock pulses propagate across inner raceway and outer housing, matching the spectral and energy signatures of raceway flaws."
+OR_014_6_1,Ball_007_1,1,2.17,"Stationary outer race fault impacts with intermediate energy, occasionally overlapping with rolling element entry/exit impulses."
+OR_014_6_1,Ball_014_1,1,2.17,"Stationary outer race fault impacts with intermediate energy, occasionally overlapping with rolling element entry/exit impulses."
+OR_014_6_1,Ball_021_1,3,6.52,"Stationary outer race fault impacts with intermediate energy, occasionally overlapping with rolling element entry/exit impulses."
+Ball_007_1,OR_014_6_1 (False Alarm),6,13.04,Rolling element defect in Ball_007_1 generates modulated impact bursts that resemble stationary outer raceway fault transients.
+Ball_014_1,OR_014_6_1 (False Alarm),3,6.52,Rolling element defect in Ball_014_1 generates modulated impact bursts that resemble stationary outer raceway fault transients.
+Ball_021_1,OR_014_6_1 (False Alarm),4,8.7,Rolling element defect in Ball_021_1 generates modulated impact bursts that resemble stationary outer raceway fault transients.

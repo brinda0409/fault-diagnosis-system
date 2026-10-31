@@ -1,0 +1,355 @@
+{
+  "phase": "Phase 9 \u2014 Controlled Application Improvements and Final Validation",
+  "backup_verification": {
+    "backup_path": "d:\\FAULT DIAGNOSIS\\app.py.phase8.bak",
+    "original_sha256": "9127e6d6b185c2bdde1bbe0e11cef7071dcb2087badaaa06fc78adad4bd162a7",
+    "updated_app_sha256": "0e6266c8049326c8141ad25ebf04a30622892567be4c0456fc26c10894bf3295",
+    "backup_exists": true,
+    "backup_preserved": true
+  },
+  "regression_tests": [
+    {
+      "test_name": "R1_FULL_TEST_SET_460_SAMPLE_REGRESSION",
+      "passed": true,
+      "details": {
+        "test_sample_count": 460,
+        "passed_validation_count": 460,
+        "predictions_identical": true,
+        "measured_accuracy": 0.9456521739130435,
+        "measured_precision_weighted": 0.9488469812429732,
+        "measured_recall_weighted": 0.9456521739130435,
+        "measured_f1_score_weighted": 0.9460232087705166,
+        "measured_macro_f1_score": 0.9460232087705165
+      }
+    },
+    {
+      "test_name": "R2_INPUT_VALIDATION_REGRESSION_MATRIX",
+      "passed": true,
+      "details": {
+        "total_test_cases": 19,
+        "all_matched_expectations": true,
+        "test_cases": [
+          {
+            "Test ID": "VAL_01",
+            "Category": "Valid Baseline",
+            "Test Description": "Standard Normal Vibration Profile",
+            "Expected Validation": true,
+            "Actual Validation": true,
+            "Inference Executed": true,
+            "Diagnosis Result": "Normal_1",
+            "Confidence (%)": 85.69,
+            "Errors Caught": "None",
+            "Test Status": "PASSED"
+          },
+          {
+            "Test ID": "VAL_02",
+            "Category": "Valid Preset",
+            "Test Description": "Preset Profile 1: Normal Condition",
+            "Expected Validation": true,
+            "Actual Validation": true,
+            "Inference Executed": true,
+            "Diagnosis Result": "Normal_1",
+            "Confidence (%)": 100.0,
+            "Errors Caught": "None",
+            "Test Status": "PASSED"
+          },
+          {
+            "Test ID": "VAL_03",
+            "Category": "Valid Preset",
+            "Test Description": "Preset Profile 2: Inner Race Fault (0.007\")",
+            "Expected Validation": true,
+            "Actual Validation": true,
+            "Inference Executed": true,
+            "Diagnosis Result": "IR_007_1",
+            "Confidence (%)": 98.67,
+            "Errors Caught": "None",
+            "Test Status": "PASSED"
+          },
+          {
+            "Test ID": "VAL_04",
+            "Category": "Valid Preset",
+            "Test Description": "Preset Profile 3: Ball Fault (0.014\")",
+            "Expected Validation": true,
+            "Actual Validation": true,
+            "Inference Executed": true,
+            "Diagnosis Result": "Ball_014_1",
+            "Confidence (%)": 87.54,
+            "Errors Caught": "None",
+            "Test Status": "PASSED"
+          },
+          {
+            "Test ID": "VAL_05",
+            "Category": "Valid Preset",
+            "Test Description": "Preset Profile 4: Outer Race Fault (0.021\")",
+            "Expected Validation": true,
+            "Actual Validation": true,
+            "Inference Executed": true,
+            "Diagnosis Result": "OR_021_6_1",
+            "Confidence (%)": 100.0,
+            "Errors Caught": "None",
+            "Test Status": "PASSED"
+          },
+          {
+            "Test ID": "INV_01",
+            "Category": "Invalid Schema",
+            "Test Description": "Missing Required Feature ('form' key omitted)",
+            "Expected Validation": false,
+            "Actual Validation": false,
+            "Inference Executed": false,
+            "Diagnosis Result": "BLOCKED",
+            "Confidence (%)": "N/A",
+            "Errors Caught": "Missing Feature Error: The following required features are missing: form.",
+            "Test Status": "PASSED"
+          },
+          {
+            "Test ID": "INV_02",
+            "Category": "Invalid Type",
+            "Test Description": "String Input in Numeric Field ('sd'='abc')",
+            "Expected Validation": false,
+            "Actual Validation": false,
+            "Inference Executed": false,
+            "Diagnosis Result": "BLOCKED",
+            "Confidence (%)": "N/A",
+            "Errors Caught": "Data Type Error: Non-numeric values (or booleans) detected in: sd. All vibration features must be real numbers.",
+            "Test Status": "PASSED"
+          },
+          {
+            "Test ID": "INV_03",
+            "Category": "Invalid Type",
+            "Test Description": "Boolean Input in Numeric Field ('mean'=True)",
+            "Expected Validation": false,
+            "Actual Validation": false,
+            "Inference Executed": false,
+            "Diagnosis Result": "BLOCKED",
+            "Confidence (%)": "N/A",
+            "Errors Caught": "Data Type Error: Non-numeric values (or booleans) detected in: mean. All vibration features must be real numbers.",
+            "Test Status": "PASSED"
+          },
+          {
+            "Test ID": "INV_04",
+            "Category": "Invalid Numerical",
+            "Test Description": "None Value in Feature ('crest'=None)",
+            "Expected Validation": false,
+            "Actual Validation": false,
+            "Inference Executed": false,
+            "Diagnosis Result": "BLOCKED",
+            "Confidence (%)": "N/A",
+            "Errors Caught": "Data Type Error: Non-numeric values (or booleans) detected in: crest. All vibration features must be real numbers.",
+            "Test Status": "PASSED"
+          },
+          {
+            "Test ID": "INV_05",
+            "Category": "Invalid Numerical",
+            "Test Description": "NaN Value in Feature ('rms'=NaN)",
+            "Expected Validation": false,
+            "Actual Validation": false,
+            "Inference Executed": false,
+            "Diagnosis Result": "BLOCKED",
+            "Confidence (%)": "N/A",
+            "Errors Caught": "Numerical Error: Non-finite values (None, NaN, Inf, -Inf) detected in: rms. Please enter finite real numbers.",
+            "Test Status": "PASSED"
+          },
+          {
+            "Test ID": "INV_06",
+            "Category": "Invalid Numerical",
+            "Test Description": "Positive Infinity in Feature ('max'=+Inf)",
+            "Expected Validation": false,
+            "Actual Validation": false,
+            "Inference Executed": false,
+            "Diagnosis Result": "BLOCKED",
+            "Confidence (%)": "N/A",
+            "Errors Caught": "Numerical Error: Non-finite values (None, NaN, Inf, -Inf) detected in: max. Please enter finite real numbers.",
+            "Test Status": "PASSED"
+          },
+          {
+            "Test ID": "INV_07",
+            "Category": "Invalid Numerical",
+            "Test Description": "Negative Infinity in Feature ('min'=-Inf)",
+            "Expected Validation": false,
+            "Actual Validation": false,
+            "Inference Executed": false,
+            "Diagnosis Result": "BLOCKED",
+            "Confidence (%)": "N/A",
+            "Errors Caught": "Numerical Error: Non-finite values (None, NaN, Inf, -Inf) detected in: min. Please enter finite real numbers.",
+            "Test Status": "PASSED"
+          },
+          {
+            "Test ID": "PHY_01",
+            "Category": "Physical Inconsistency",
+            "Test Description": "Inverted Amplitude Bounds (min > max: min=1.5, max=0.5)",
+            "Expected Validation": false,
+            "Actual Validation": false,
+            "Inference Executed": false,
+            "Diagnosis Result": "BLOCKED",
+            "Confidence (%)": "N/A",
+            "Errors Caught": "Physical Consistency Error: Inverted Amplitude Bounds: Peak minimum (1.5000g) cannot be greater than or equal to peak maximum (0.5000g).",
+            "Test Status": "PASSED"
+          },
+          {
+            "Test ID": "PHY_02",
+            "Category": "Physical Inconsistency",
+            "Test Description": "Identical Amplitude Bounds (min == max: min=0.5, max=0.5)",
+            "Expected Validation": false,
+            "Actual Validation": false,
+            "Inference Executed": false,
+            "Diagnosis Result": "BLOCKED",
+            "Confidence (%)": "N/A",
+            "Errors Caught": "Physical Consistency Error: Inverted Amplitude Bounds: Peak minimum (0.5000g) cannot be greater than or equal to peak maximum (0.5000g).",
+            "Test Status": "PASSED"
+          },
+          {
+            "Test ID": "PHY_03",
+            "Category": "Physical Inconsistency",
+            "Test Description": "Negative Standard Deviation (sd = -0.0500)",
+            "Expected Validation": false,
+            "Actual Validation": false,
+            "Inference Executed": false,
+            "Diagnosis Result": "BLOCKED",
+            "Confidence (%)": "N/A",
+            "Errors Caught": "Physical Consistency Error: Negative Dispersion: Standard deviation (-0.0500g) cannot be negative.",
+            "Test Status": "PASSED"
+          },
+          {
+            "Test ID": "PHY_04",
+            "Category": "Physical Inconsistency",
+            "Test Description": "Negative RMS Signal Energy (rms = -0.1000)",
+            "Expected Validation": false,
+            "Actual Validation": false,
+            "Inference Executed": false,
+            "Diagnosis Result": "BLOCKED",
+            "Confidence (%)": "N/A",
+            "Errors Caught": "Physical Consistency Error: Negative Signal Energy: Root Mean Square energy (-0.1000g) cannot be negative.",
+            "Test Status": "PASSED"
+          },
+          {
+            "Test ID": "ACC_01",
+            "Category": "Schema Acceptance",
+            "Test Description": "High Kurtosis Impulsive Signal (kurtosis = 48.5, physically valid bounds)",
+            "Expected Validation": true,
+            "Actual Validation": true,
+            "Inference Executed": true,
+            "Diagnosis Result": "Normal_1",
+            "Confidence (%)": 83.69,
+            "Errors Caught": "None",
+            "Test Status": "PASSED"
+          },
+          {
+            "Test ID": "ACC_02",
+            "Category": "Schema Acceptance",
+            "Test Description": "High Crest Factor Signal (crest = 18.2, physically valid bounds)",
+            "Expected Validation": true,
+            "Actual Validation": true,
+            "Inference Executed": true,
+            "Diagnosis Result": "Normal_1",
+            "Confidence (%)": 85.69,
+            "Errors Caught": "None",
+            "Test Status": "PASSED"
+          },
+          {
+            "Test ID": "ACC_03",
+            "Category": "Schema Acceptance",
+            "Test Description": "Negative Asymmetry Signal (skewness = -2.8, physically valid bounds)",
+            "Expected Validation": true,
+            "Actual Validation": true,
+            "Inference Executed": true,
+            "Diagnosis Result": "Normal_1",
+            "Confidence (%)": 85.69,
+            "Errors Caught": "None",
+            "Test Status": "PASSED"
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "R3_STREAMLIT_APPTEST_DEPRECATION_AUDIT",
+      "passed": true,
+      "details": {
+        "uncaught_exceptions": 0,
+        "deprecation_warnings": [],
+        "use_container_width_eliminated": true
+      }
+    }
+  ],
+  "misclassification_analysis": {
+    "Ball_021_1": {
+      "recall": 0.8260869565217391,
+      "correct_count": 38,
+      "total_count": 46,
+      "confusion_breakdown": [
+        {
+          "Actual Class": "Ball_021_1",
+          "Predicted Class": "IR_021_1",
+          "Sample Count": 3,
+          "Error Percentage": 6.52,
+          "Physical Reason": "Severe rolling element (0.021\") shock pulses propagate across inner raceway and outer housing, matching the spectral and energy signatures of raceway flaws."
+        },
+        {
+          "Actual Class": "Ball_021_1",
+          "Predicted Class": "OR_014_6_1",
+          "Sample Count": 4,
+          "Error Percentage": 8.7,
+          "Physical Reason": "Severe rolling element (0.021\") shock pulses propagate across inner raceway and outer housing, matching the spectral and energy signatures of raceway flaws."
+        },
+        {
+          "Actual Class": "Ball_021_1",
+          "Predicted Class": "OR_021_6_1",
+          "Sample Count": 1,
+          "Error Percentage": 2.17,
+          "Physical Reason": "Severe rolling element (0.021\") shock pulses propagate across inner raceway and outer housing, matching the spectral and energy signatures of raceway flaws."
+        }
+      ]
+    },
+    "OR_014_6_1": {
+      "recall": 0.8913043478260869,
+      "correct_count": 41,
+      "total_count": 46,
+      "confusion_breakdown": [
+        {
+          "Actual Class": "OR_014_6_1",
+          "Predicted Class": "Ball_007_1",
+          "Sample Count": 1,
+          "Error Percentage": 2.17,
+          "Physical Reason": "Stationary outer race fault impacts with intermediate energy, occasionally overlapping with rolling element entry/exit impulses."
+        },
+        {
+          "Actual Class": "OR_014_6_1",
+          "Predicted Class": "Ball_014_1",
+          "Sample Count": 1,
+          "Error Percentage": 2.17,
+          "Physical Reason": "Stationary outer race fault impacts with intermediate energy, occasionally overlapping with rolling element entry/exit impulses."
+        },
+        {
+          "Actual Class": "OR_014_6_1",
+          "Predicted Class": "Ball_021_1",
+          "Sample Count": 3,
+          "Error Percentage": 6.52,
+          "Physical Reason": "Stationary outer race fault impacts with intermediate energy, occasionally overlapping with rolling element entry/exit impulses."
+        }
+      ],
+      "false_positive_breakdown": [
+        {
+          "Actual Class": "Ball_007_1",
+          "Predicted Class": "OR_014_6_1 (False Alarm)",
+          "Sample Count": 6,
+          "Error Percentage": 13.04,
+          "Physical Reason": "Rolling element defect in Ball_007_1 generates modulated impact bursts that resemble stationary outer raceway fault transients."
+        },
+        {
+          "Actual Class": "Ball_014_1",
+          "Predicted Class": "OR_014_6_1 (False Alarm)",
+          "Sample Count": 3,
+          "Error Percentage": 6.52,
+          "Physical Reason": "Rolling element defect in Ball_014_1 generates modulated impact bursts that resemble stationary outer raceway fault transients."
+        },
+        {
+          "Actual Class": "Ball_021_1",
+          "Predicted Class": "OR_014_6_1 (False Alarm)",
+          "Sample Count": 4,
+          "Error Percentage": 8.7,
+          "Physical Reason": "Rolling element defect in Ball_021_1 generates modulated impact bursts that resemble stationary outer raceway fault transients."
+        }
+      ]
+    }
+  },
+  "overall_status": "PASSED"
+}

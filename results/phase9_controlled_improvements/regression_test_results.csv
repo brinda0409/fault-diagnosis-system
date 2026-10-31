@@ -1,0 +1,20 @@
+Test ID,Category,Test Description,Expected Validation,Actual Validation,Inference Executed,Diagnosis Result,Confidence (%),Errors Caught,Test Status
+VAL_01,Valid Baseline,Standard Normal Vibration Profile,True,True,True,Normal_1,85.69,None,PASSED
+VAL_02,Valid Preset,Preset Profile 1: Normal Condition,True,True,True,Normal_1,100.0,None,PASSED
+VAL_03,Valid Preset,"Preset Profile 2: Inner Race Fault (0.007"")",True,True,True,IR_007_1,98.67,None,PASSED
+VAL_04,Valid Preset,"Preset Profile 3: Ball Fault (0.014"")",True,True,True,Ball_014_1,87.54,None,PASSED
+VAL_05,Valid Preset,"Preset Profile 4: Outer Race Fault (0.021"")",True,True,True,OR_021_6_1,100.0,None,PASSED
+INV_01,Invalid Schema,Missing Required Feature ('form' key omitted),False,False,False,BLOCKED,N/A,Missing Feature Error: The following required features are missing: form.,PASSED
+INV_02,Invalid Type,String Input in Numeric Field ('sd'='abc'),False,False,False,BLOCKED,N/A,Data Type Error: Non-numeric values (or booleans) detected in: sd. All vibration features must be real numbers.,PASSED
+INV_03,Invalid Type,Boolean Input in Numeric Field ('mean'=True),False,False,False,BLOCKED,N/A,Data Type Error: Non-numeric values (or booleans) detected in: mean. All vibration features must be real numbers.,PASSED
+INV_04,Invalid Numerical,None Value in Feature ('crest'=None),False,False,False,BLOCKED,N/A,Data Type Error: Non-numeric values (or booleans) detected in: crest. All vibration features must be real numbers.,PASSED
+INV_05,Invalid Numerical,NaN Value in Feature ('rms'=NaN),False,False,False,BLOCKED,N/A,"Numerical Error: Non-finite values (None, NaN, Inf, -Inf) detected in: rms. Please enter finite real numbers.",PASSED
+INV_06,Invalid Numerical,Positive Infinity in Feature ('max'=+Inf),False,False,False,BLOCKED,N/A,"Numerical Error: Non-finite values (None, NaN, Inf, -Inf) detected in: max. Please enter finite real numbers.",PASSED
+INV_07,Invalid Numerical,Negative Infinity in Feature ('min'=-Inf),False,False,False,BLOCKED,N/A,"Numerical Error: Non-finite values (None, NaN, Inf, -Inf) detected in: min. Please enter finite real numbers.",PASSED
+PHY_01,Physical Inconsistency,"Inverted Amplitude Bounds (min > max: min=1.5, max=0.5)",False,False,False,BLOCKED,N/A,Physical Consistency Error: Inverted Amplitude Bounds: Peak minimum (1.5000g) cannot be greater than or equal to peak maximum (0.5000g).,PASSED
+PHY_02,Physical Inconsistency,"Identical Amplitude Bounds (min == max: min=0.5, max=0.5)",False,False,False,BLOCKED,N/A,Physical Consistency Error: Inverted Amplitude Bounds: Peak minimum (0.5000g) cannot be greater than or equal to peak maximum (0.5000g).,PASSED
+PHY_03,Physical Inconsistency,Negative Standard Deviation (sd = -0.0500),False,False,False,BLOCKED,N/A,Physical Consistency Error: Negative Dispersion: Standard deviation (-0.0500g) cannot be negative.,PASSED
+PHY_04,Physical Inconsistency,Negative RMS Signal Energy (rms = -0.1000),False,False,False,BLOCKED,N/A,Physical Consistency Error: Negative Signal Energy: Root Mean Square energy (-0.1000g) cannot be negative.,PASSED
+ACC_01,Schema Acceptance,"High Kurtosis Impulsive Signal (kurtosis = 48.5, physically valid bounds)",True,True,True,Normal_1,83.69,None,PASSED
+ACC_02,Schema Acceptance,"High Crest Factor Signal (crest = 18.2, physically valid bounds)",True,True,True,Normal_1,85.69,None,PASSED
+ACC_03,Schema Acceptance,"Negative Asymmetry Signal (skewness = -2.8, physically valid bounds)",True,True,True,Normal_1,85.69,None,PASSED

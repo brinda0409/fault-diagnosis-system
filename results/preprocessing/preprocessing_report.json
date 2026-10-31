@@ -1,0 +1,52 @@
+{
+  "original_dataset_size": 2300,
+  "feature_list": [
+    "max",
+    "min",
+    "mean",
+    "sd",
+    "rms",
+    "skewness",
+    "kurtosis",
+    "crest",
+    "form"
+  ],
+  "target_column": "fault",
+  "encoding_method": "LabelEncoder",
+  "label_mapping": {
+    "0": "Ball_007_1",
+    "1": "Ball_014_1",
+    "2": "Ball_021_1",
+    "3": "IR_007_1",
+    "4": "IR_014_1",
+    "5": "IR_021_1",
+    "6": "Normal_1",
+    "7": "OR_007_6_1",
+    "8": "OR_014_6_1",
+    "9": "OR_021_6_1"
+  },
+  "split_ratio": "80% Train / 20% Test",
+  "random_state": 42,
+  "stratify": true,
+  "X_train_shape": [
+    1840,
+    9
+  ],
+  "X_test_shape": [
+    460,
+    9
+  ],
+  "y_train_shape": [
+    1840
+  ],
+  "y_test_shape": [
+    460
+  ],
+  "train_samples_per_class": 184,
+  "test_samples_per_class": 46,
+  "scaling_method": "StandardScaler",
+  "scaler_fit_target": "X_train ONLY (No Data Leakage)",
+  "data_leakage_prevented": true,
+  "outliers_removed": false,
+  "features_removed": false
+}

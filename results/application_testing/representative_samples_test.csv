@@ -1,0 +1,11 @@
+Target Class Index,Target Class Name,Test Sample Row,Predicted Index,Predicted Class,Correct Prediction,Confidence (%),Runner-up Margin (%),Probability Sum,"Probability In [0,1]",Diagnostic Type,Severity Level
+0,Ball_007_1,2,0,Ball_007_1,True,99.79,99.58,1.0,True,Rolling Element (Ball) Fault,FAULT — MODERATE
+1,Ball_014_1,6,1,Ball_014_1,True,87.54,75.84,1.0,True,Rolling Element (Ball) Fault,FAULT — HIGH
+2,Ball_021_1,4,2,Ball_021_1,True,62.64,32.65,1.0,True,Rolling Element (Ball) Fault,FAULT — CRITICAL
+3,IR_007_1,11,3,IR_007_1,True,98.67,97.33,1.0,True,Inner Race Fault,FAULT — MODERATE
+4,IR_014_1,0,4,IR_014_1,True,98.67,97.33,1.0,True,Inner Race Fault,FAULT — HIGH
+5,IR_021_1,9,5,IR_021_1,True,100.0,100.0,1.0,True,Inner Race Fault,FAULT — CRITICAL
+6,Normal_1,1,6,Normal_1,True,100.0,100.0,1.0,True,Normal Condition,NORMAL
+7,OR_007_6_1,16,7,OR_007_6_1,True,100.0,100.0,1.0,True,Outer Race Fault,FAULT — MODERATE
+8,OR_014_6_1,21,8,OR_014_6_1,True,93.36,90.15,1.0,True,Outer Race Fault,FAULT — HIGH
+9,OR_021_6_1,8,9,OR_021_6_1,True,100.0,100.0,1.0,True,Outer Race Fault,FAULT — CRITICAL

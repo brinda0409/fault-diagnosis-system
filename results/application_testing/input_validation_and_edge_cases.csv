@@ -1,0 +1,12 @@
+Category,Test Case,App Validation Caught,Model Executed,Resulting Diagnosis,Confidence (%),Exception (if any),Safety Assessment,Valid Engineering Diagnosis
+Invalid Input,Single NaN in Feature ('mean'=NaN),True,False,N/A (Blocked),N/A,None,SAFELY BLOCKED (Validation Triggered),False
+Invalid Input,"Multiple NaNs ('max', 'min', 'rms'=NaN)",True,False,N/A (Blocked),N/A,None,SAFELY BLOCKED (Validation Triggered),False
+Invalid Input,None value in Feature ('kurtosis'=None),True,False,N/A (Blocked),N/A,None,SAFELY BLOCKED (Validation Triggered),False
+Invalid Input,Missing feature in dictionary (omitted 'crest'),True,False,N/A (Blocked),N/A,None,SAFELY BLOCKED (Validation Triggered),False
+Invalid Input,Non-numeric string value in Feature ('sd'='abc'),True,False,N/A (Blocked),N/A,None,SAFELY BLOCKED (Validation Triggered),False
+Physically Inconsistent,"Inverted Amplitude Bounds (min > max: min=2.5, max=0.5)",False,True,Normal_1,72.02,None,PERMITTED BY APP (Unvalidated Diagnosis Generated),False
+Physically Inconsistent,Negative Standard Deviation (sd = -0.5000),False,True,Normal_1,85.69,None,PERMITTED BY APP (Unvalidated Diagnosis Generated),False
+Physically Inconsistent,Negative RMS Energy (rms = -0.8000),False,True,Normal_1,85.69,None,PERMITTED BY APP (Unvalidated Diagnosis Generated),False
+Physically Inconsistent,"All Zero Signal Vector (max=0, min=0, ..., form=0)",False,True,Normal_1,100.0,None,PERMITTED BY APP (Unvalidated Diagnosis Generated),False
+Physically Inconsistent,"Extreme Physical Spike (max=500g, min=-500g, kurtosis=250)",False,True,Normal_1,54.0,None,PERMITTED BY APP (Unvalidated Diagnosis Generated),False
+Physically Inconsistent,Inconsistent Crest Factor (crest=100.0 while max/rms=4.46),False,True,Normal_1,85.69,None,PERMITTED BY APP (Unvalidated Diagnosis Generated),False
